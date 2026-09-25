@@ -32,8 +32,5 @@ public class Ejercicio1 {
                 System.out.println("No es ni un fichero ni un directorio");
             }
         }
-
-
-
     }
 }
