@@ -27,7 +27,6 @@ public class FileInputStreamClass {
                 imagen.read();
                 System.out.printf("%02x\t", b);
             }
-
         }catch(IOException e){
             System.out.printf("Error: %s\n" ,e.getMessage());
         }

@@ -15,6 +15,10 @@ import java.io.IOException;
  * @version 1.0.0
  */
 public class Ejercicio1 {
+    /**
+     * Metodo para crear la copia de un fichero byte por byte
+     * @param args
+     */
     public static void main(String[] args) {
         File file = new File(args[1]);
         if(args.length<1){

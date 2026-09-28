@@ -16,6 +16,11 @@ import java.util.Scanner;
  * @version 1.0.0
  */
 public class Ejercicio3 {
+    /**
+     * Metodo para crear un fichero.txt y escribir en el
+     * para posteriormente utilizar el anexo append y volver a escribir
+     * @param args
+     */
     public static void main(String[] args) {
         File document = new File(args[0]);
         try {
