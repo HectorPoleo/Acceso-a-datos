@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 
 /**
  * Forma de leer un fichero en bytes
- * @author hectorpoleo
+ * @author Hectorpoleo
  * @version 1.0.0
  */
 public class FileInputStreamClass {

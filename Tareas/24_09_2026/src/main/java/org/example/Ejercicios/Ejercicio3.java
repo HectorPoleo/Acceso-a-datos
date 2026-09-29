@@ -12,7 +12,7 @@ import java.util.Scanner;
  * líneas iniciales con FileWriter. Posteriormente, mediante una segunda apertura utilizando el
  * modo de anexo (append), añade una nueva línea al final del archivo sin borrar el contenido
  * anterior.
- * @author hectorpoleo
+ * @author Hectorpoleo
  * @version 1.0.0
  */
 public class Ejercicio3 {

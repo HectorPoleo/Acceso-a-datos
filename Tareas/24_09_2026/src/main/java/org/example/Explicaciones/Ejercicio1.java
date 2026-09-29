@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * Practica de generar un fichero para leer y escribir en el
- * @author hectorpoleo
+ * @author Hectorpoleo
  * @version 1.0.0
  */
 public class Ejercicio1 {

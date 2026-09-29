@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * Funcion para clonar imagenes o ficheros
- * @author hectorpoleo
+ * @author Hectorpoleo
  * @version 1.0.0
  */
 public class FileOutputStreamClass {

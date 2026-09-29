@@ -11,7 +11,7 @@ import java.io.IOException;
  * ejemplo, imagen.png o cualquier archivo de datos) creando un archivo de salida llamado
  * copia_imagen.png. Utiliza un array de bytes (byte[]) como búfer manual para transferir los
  * datos desde FileInputStream hacia FileOutputStream.
- * @author hectorpoleo
+ * @author Hectorpoleo
  * @version 1.0.0
  */
 public class Ejercicio1 {
