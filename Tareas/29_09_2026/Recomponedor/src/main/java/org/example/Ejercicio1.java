@@ -15,16 +15,20 @@ import java.util.Scanner;
  * @version 1.0.0
  */
 public class Ejercicio1 {
+    /**
+     * Merodo para separar por puntos, guiones o espacios vacios un documento de texto
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce la ruta del fichero: ");
-        String ruta = sc.nextLine();
-        if(ruta.isBlank()){
+        args[0] = sc.nextLine();
+        if(args[0].isBlank()){
             System.out.println("ERROR: Indicar fichero");
             sc.close();
         }
-        File fichero = new File(ruta);
-        String recompRuta = ruta+".recomp.txt";
+        File fichero = new File(args[0]);
+        String recompRuta = args[0]+".recomp.txt";
         File ficheroRecomp = new File(recompRuta);
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(ficheroRecomp));
             BufferedReader br = new BufferedReader(new FileReader(fichero))){
@@ -33,11 +37,23 @@ public class Ejercicio1 {
                 if(letras.isBlank()){
                    bw.newLine();
                 } else {
-                    String[] frases = letras.split(".");
-                    for (int i = 0; i < frases.length; i++) {
-                        if(frases[i].equals(".")){
-                            bw.newLine();
+                    if(letras.contains(".")){
+                        String[] frases = letras.split("\\.");
+                        for (String frase : frases) {
+                            if(frase.contains("-")) {
+                                String[] fraseCortada = frase.split("-");
+                                bw.write(fraseCortada[0]);
+                            }else {
+                                bw.write(frase+ ".");
+                                bw.newLine();
+                            }
                         }
+                    }else if(letras.endsWith("-")){
+                        String[] fraseCortada = letras.split("-");
+                        bw.write(fraseCortada[0]);
+                    }else{
+                        bw.write(letras+"{\\n}");
+                        bw.newLine();
                     }
                 }
             }
