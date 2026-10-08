@@ -26,7 +26,7 @@ public class FileCsvWriter {
                 String codigo = (producto.getCod() == null)? "": String.valueOf(producto.getCod());
                 String descripcion = (producto.getDescr() == null)? "": String.valueOf(producto.getDescr());
                 String precio = (producto.getPrUnit() == null)? "": String.valueOf(producto.getPrUnit());
-                bw.write(codigo+";"+descripcion+";"+precio);
+                bw.write(codigo+";"+descripcion+";"+precio+";");
                 bw.newLine();
             }
 

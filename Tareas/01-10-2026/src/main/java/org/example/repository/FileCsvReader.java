@@ -22,13 +22,13 @@ public class FileCsvReader {
             }
             String line;
             while ((line = br.readLine()) != null){
-                String[] datos = line.split(";", -1);
+                String[] datos = line.split(";");
                 for (String dato : datos){
                     if (dato.isBlank()){
                         System.out.println("ERROR: la linea no cumple la estructura");
-                    }
+                       }
                 }
-                Producto producto = new Producto(Integer.parseInt(datos[0]), datos[1], Double.parseDouble(datos[2]));
+                Producto producto = new Producto(datos[0].isBlank() ? null : Integer.parseInt(datos[0]), datos[1], datos[2].isBlank()  ? null : Double.parseDouble(datos[2]));
                 productos.add(producto);
             }
             System.out.println(productos);
