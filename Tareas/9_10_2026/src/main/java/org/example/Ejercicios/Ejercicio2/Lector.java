@@ -1,8 +1,10 @@
 package org.example.Ejercicios.Ejercicio2;
 
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import org.example.Ejercicios.model.Empleado;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ejercicio 2: Serialización y Deserialización de Objetos (ObjectOutputStream y ObjectInputStream)
@@ -22,19 +24,24 @@ public class Lector {
      */
     public static void main(String[] args) {
         String path = "empleados.dat";
-        Object[] empleados = new Object[5];
+        List<Empleado> empleados = new ArrayList<>();
         try (FileInputStream fis = new FileInputStream(path);
-             DataInputStream dis = new DataInputStream(fis)){
-            while(dis.available() > 0){
-                empleados[0]= dis.readInt();
-                empleados[1]= dis.readUTF();
-                empleados[2]= dis.readUTF();
-                empleados[3]= dis.readDouble();
-                empleados[4]= dis.readBoolean();
-                System.out.printf("Id: %d, Dni: %s, Nombre: %s, Sueldo: %.2f, Tiempo Parcial: %b\n", empleados[0], empleados[1], empleados[2], empleados[3], empleados[4]);
+             ObjectInputStream dis = new ObjectInputStream(fis)){
+            while (true){
+                try {
+                    Object[] empleadosObject = (Object[]) dis.readObject() ;
+                    Empleado empleado1 = new Empleado((Integer) empleadosObject[0], (String) empleadosObject[1], (String) empleadosObject[2],
+                            (Double) empleadosObject[3], (Boolean) empleadosObject[4]);
+                    empleados.add(empleado1);
+                } catch (EOFException e){
+                    break;
+                }
             }
+            System.out.println(empleados);
         }catch (IOException e){
             System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }

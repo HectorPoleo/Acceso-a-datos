@@ -3,6 +3,7 @@ package org.example.Ejercicios.Ejercicio2;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 /**
  * Ejercicio 2: Serialización y Deserialización de Objetos (ObjectOutputStream y ObjectInputStream)
@@ -25,13 +26,9 @@ public class Escritor {
         String path = "empleados.dat";
         Object[][] empleados = {{1,"49512097c","Acel",33232.0,true},{2,"49522097c","Pepe",24.0,true}};
         try(FileOutputStream fos = new FileOutputStream(path);
-            DataOutputStream dos = new DataOutputStream(fos)){
+            ObjectOutputStream oos = new ObjectOutputStream(fos)){
             for (Object[] empleado : empleados){
-                dos.writeInt((Integer) empleado[0]);
-                dos.writeUTF((String) empleado[1]);
-                dos.writeUTF((String) empleado[2]);
-                dos.writeDouble((Double) empleado[3]);
-                dos.writeBoolean((Boolean) empleado[4]);
+                oos.writeObject(empleado);
             }
         }catch (IOException e){
             System.out.println(e.getMessage());
