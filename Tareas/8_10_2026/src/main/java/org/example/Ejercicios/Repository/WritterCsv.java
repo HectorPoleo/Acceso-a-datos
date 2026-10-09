@@ -11,6 +11,10 @@ import java.util.List;
 
 public class WritterCsv {
 
+    /**
+     * Metodo para escribir en un fichero csv
+     * @param args
+     */
     public static void main(String[] args) {
         String path = "Pratica.csv";
         File file = new File(path);
