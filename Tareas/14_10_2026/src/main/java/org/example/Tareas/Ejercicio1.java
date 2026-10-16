@@ -92,7 +92,7 @@ public class Ejercicio1 {
         long posSaldo = (long) nReg*TAMANO_REGISTRO + OFFSET_SALDO;
         raf.seek(posSaldo);
         double saldoActual = raf.readDouble();
-        raf.seek(posSaldo);;
+        raf.seek(posSaldo);
         raf.writeDouble(saldoActual+incremento);
     }
 
