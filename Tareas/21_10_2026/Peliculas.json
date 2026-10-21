@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "titulo": "Los pinguinos de madagascar",
+    "duracionMin": 120,
+    "director": {
+      "nombre": "Juan Estebam",
+      "nacionalidad": "Portuges"
+    },
+    "reparto": [
+      "Belen Estebam"
+    ]
+  }
+]
