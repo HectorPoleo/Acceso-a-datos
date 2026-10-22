@@ -1,0 +1,38 @@
+{
+  "EA11": {
+    "nombre": "Franco",
+    "asignaturas": [
+      {
+        "nombre": "Historia de espanya",
+        "calificacion": 10.0
+      }
+    ]
+  },
+  "EA12": {
+    "nombre": "Hitler",
+    "asignaturas": [
+      {
+        "nombre": "Artes",
+        "calificacion": 0.0
+      }
+    ]
+  },
+  "EA13": {
+    "nombre": "Jeanne D\u0027Arc",
+    "asignaturas": [
+      {
+        "nombre": "Historia de Francia",
+        "calificacion": 10.0
+      }
+    ]
+  },
+  "EA14": {
+    "nombre": "Yutirannus",
+    "asignaturas": [
+      {
+        "nombre": "Historia del Cretacico",
+        "calificacion": 10.0
+      }
+    ]
+  }
+}
