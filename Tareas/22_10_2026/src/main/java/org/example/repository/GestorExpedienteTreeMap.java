@@ -3,6 +3,7 @@ package org.example.repository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.sun.source.tree.Tree;
 import org.example.model.Alumno;
 import org.example.model.Asignatura;
 
@@ -10,27 +11,42 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ * Clase de gestor de expediente con TreeMap
+ * @author hectorpoleo
+ * @version 1.0.0
+ */
 public class GestorExpedienteTreeMap {
     static TreeMap<String, Alumno> expedientes = new TreeMap<>();
 
+    /**
+     * Metodo para cargar los expedientes del fichero
+     * @param ruta ruta del fichero
+     */
     void cargarExpediente(String ruta) {
         Gson json = new Gson();
         File file = new File(ruta);
-
-        try (FileReader fr = new FileReader(ruta)) {
-            if(!file.exists()){
+        try {
+            if (!file.exists()) {
                 file.createNewFile();
             }
-            Type tipoArrayList = new TypeToken<TreeMap<String, Alumno>>() {
-            }.getType();
-            expedientes = json.fromJson(fr, tipoArrayList);
+            try (FileReader fr = new FileReader(ruta)) {
+                Type tipoArrayList = new TypeToken<TreeMap<String, Alumno>>() {}.getType();
+                TreeMap<String, Alumno> leido = json.fromJson(fr, tipoArrayList);
+                expedientes = (leido != null) ? leido : new TreeMap<>();
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    /**
+     * Metodo para guardar un expediente en el fichero
+     * @param alumno alumno del cual se va a guardar el expediente
+     * @param ruta ruta del fichero
+     */
     void guardarExpediente(Alumno alumno, String ruta){
-        Gson json = new GsonBuilder().setPrettyPrinting().create();
+        Gson json = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
         expedientes.put("EA11", alumno);
         try (FileWriter fw = new FileWriter(ruta)){
             json.toJson(expedientes, fw);
@@ -39,6 +55,10 @@ public class GestorExpedienteTreeMap {
         }
     }
 
+    /**
+     * Metodo para imprimir en terminal los expedientes
+     * @param expedientesnuevos expedientes a imprimir
+     */
     void imprimirMap(TreeMap<String, Alumno> expedientesnuevos){
         Set<String> set = expedientesnuevos.keySet();
         Object[] keys = set.toArray();
@@ -48,9 +68,12 @@ public class GestorExpedienteTreeMap {
         }
     }
 
+    /**
+     * Metodo para generar datos iniciales en el fichero
+     */
     void generarDatosIniciales(){
         expedientes.put("EA12", new Alumno("Hitler", new ArrayList<>(List.of(new Asignatura("Artes", 0.0)))));
-        expedientes.put("EA13", new Alumno("Jeanne D'Arc", new ArrayList<>(List.of(new Asignatura("Historia de Francia", 10)))));
+        expedientes.put("EA13", new Alumno("Jeanne D"+'\''+"Arc", new ArrayList<>(List.of(new Asignatura("Historia de Francia", 10)))));
         expedientes.put("EA14", new Alumno("Yutirannus", new ArrayList<>(List.of(new Asignatura("Historia del Cretacico", 10.0)))));
     }
 

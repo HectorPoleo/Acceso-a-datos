@@ -2,17 +2,32 @@ package org.example.model;
 
 import java.util.Objects;
 
+/**
+ * Clase asignatura
+ * @author hectorpoleo
+ * @version 1.0.0
+ */
 public class Asignatura {
     String nombre;
     double calificacion;
 
+    /**
+     * Constructor vacio
+     */
     public Asignatura() {
     }
 
+    /**
+     * Constructor de la clase Asignatura
+     * @param nombre
+     * @param calificacion
+     */
     public Asignatura(String nombre, double calificacion) {
         this.nombre = nombre;
         this.calificacion = calificacion;
     }
+
+    //GETTERS y SETTERS
 
     public String getNombre() {
         return nombre;
@@ -30,6 +45,8 @@ public class Asignatura {
         this.calificacion = calificacion;
     }
 
+    //HASHCODE y EQUALS
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -41,6 +58,8 @@ public class Asignatura {
     public int hashCode() {
         return Objects.hash(nombre, calificacion);
     }
+
+    // toSTRING
 
     @Override
     public String toString() {

@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa215908-7636-49da-b911-30e03b78e1f8" name="Changes" comment="" />
+    <list default="true" id="fa215908-7636-49da-b911-30e03b78e1f8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Expedientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/Expedientes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Alumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Asignatura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Asignatura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/GestorExpedienteTreeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/GestorExpedienteTreeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../22_10_2026ç/src/main/java/org/example/model/Alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../22_10_2026ç/src/main/java/org/example/repository/GestorExpedienteTreeMap.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,12 +53,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GestorExpedienteTreeMap.executor": "Run",
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/tarde/Descargas/Acceso-a-datos/Tareas/22_10_2026ç/src/main/resources",
     "node.js.detected.package.jshint": "true",
@@ -66,24 +78,10 @@
       <recent name="$PROJECT_DIR$/../22_10_2026ç/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="22_10_2026" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="22_10_2026" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
       </set>
     </attachedChunks>
   </component>
