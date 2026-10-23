@@ -12,16 +12,17 @@ public class Main {
     public static void main(String[] args) {
         String ruta = "Expedientes.json";
         GestorExpedienteTreeMap ge = new GestorExpedienteTreeMap();
+        if(ge.getExpedientes().isEmpty() || ge.getExpedientes() == null){
+            ge.generarDatosIniciales();
+            ge.guardarExpediente(ge.getExpedientes(), ruta);
+        }
+        System.out.println("Primero: "+ ge.getExpedientes().firstEntry());
+        System.out.println("Ultima: "+ ge.getExpedientes().lastEntry());
+
+        ge.getExpedientes().get("EA13").getAsignaturas().add(new Asignatura("Religion", 10.0));
+        ge.guardarExpediente(ge.getExpedientes(), ruta);
         ge.cargarExpediente(ruta);
-        ge.generarDatosIniciales();
-        Asignatura asignatura = new Asignatura("Historia de espanya", 10.0);
-        Asignatura asignatura2 = new Asignatura("Aspectos de la guerra", 9.0);
-        List<Asignatura> asig1 = new ArrayList<>();
-        asig1.add(asignatura2);
-        asig1.add(asignatura);
-        Alumno alumno1 = new Alumno("Franco", asig1);
-        ge.guardarExpediente(alumno1, ruta);
         ge.imprimirMap(ge.getExpedientes());
-        alumno1.calcularNotaMedia();
+
     }
 }

@@ -23,7 +23,7 @@ public class GestorExpedienteTreeMap {
      * Metodo para cargar los expedientes del fichero
      * @param ruta ruta del fichero
      */
-    public void cargarExpediente(String ruta) {
+    public TreeMap<String, Alumno> cargarExpediente(String ruta) {
         Gson json = new Gson();
         File file = new File(ruta);
         try {
@@ -33,7 +33,7 @@ public class GestorExpedienteTreeMap {
             try (FileReader fr = new FileReader(ruta)) {
                 Type tipoArrayList = new TypeToken<TreeMap<String, Alumno>>() {}.getType();
                 TreeMap<String, Alumno> leido = json.fromJson(fr, tipoArrayList);
-                expedientes = (leido != null) ? leido : new TreeMap<>();
+                return expedientes = (leido != null) ? leido : new TreeMap<>();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -45,9 +45,8 @@ public class GestorExpedienteTreeMap {
      * @param alumno alumno del cual se va a guardar el expediente
      * @param ruta ruta del fichero
      */
-    public void guardarExpediente(Alumno alumno, String ruta){
+    public void guardarExpediente(TreeMap<String, Alumno> map, String ruta){
         Gson json = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
-        expedientes.put("EA11", alumno);
         try (FileWriter fw = new FileWriter(ruta)){
             json.toJson(expedientes, fw);
         } catch (IOException e){
@@ -84,13 +83,13 @@ public class GestorExpedienteTreeMap {
     public static void main(String[] args) {
         String ruta = "Expedientes.json";
         GestorExpedienteTreeMap ge = new GestorExpedienteTreeMap();
-        ge.cargarExpediente(ruta);
+        expedientes = ge.cargarExpediente(ruta);
         ge.generarDatosIniciales();
         Asignatura asignatura = new Asignatura("Historia de espanya", 10.0);
         List<Asignatura> asig1 = new ArrayList<>();
         asig1.add(asignatura);
         Alumno alumno1 = new Alumno("Franco", asig1);
-        ge.guardarExpediente(alumno1, ruta);
+        ge.guardarExpediente(expedientes, ruta);
         ge.imprimirMap(expedientes);
     }
 }

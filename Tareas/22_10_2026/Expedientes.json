@@ -1,17 +1,4 @@
 {
-  "EA11": {
-    "nombre": "Franco",
-    "asignaturas": [
-      {
-        "nombre": "Aspectos de la guerra",
-        "calificacion": 9.0
-      },
-      {
-        "nombre": "Historia de espanya",
-        "calificacion": 10.0
-      }
-    ]
-  },
   "EA12": {
     "nombre": "Hitler",
     "asignaturas": [
@@ -26,6 +13,10 @@
     "asignaturas": [
       {
         "nombre": "Historia de Francia",
+        "calificacion": 10.0
+      },
+      {
+        "nombre": "Religion",
         "calificacion": 10.0
       }
     ]
