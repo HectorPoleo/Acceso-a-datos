@@ -17,13 +17,13 @@ import java.util.*;
  * @version 1.0.0
  */
 public class GestorExpedienteTreeMap {
-    static TreeMap<String, Alumno> expedientes = new TreeMap<>();
+    public static TreeMap<String, Alumno> expedientes = new TreeMap<>();
 
     /**
      * Metodo para cargar los expedientes del fichero
      * @param ruta ruta del fichero
      */
-    void cargarExpediente(String ruta) {
+    public void cargarExpediente(String ruta) {
         Gson json = new Gson();
         File file = new File(ruta);
         try {
@@ -45,7 +45,7 @@ public class GestorExpedienteTreeMap {
      * @param alumno alumno del cual se va a guardar el expediente
      * @param ruta ruta del fichero
      */
-    void guardarExpediente(Alumno alumno, String ruta){
+    public void guardarExpediente(Alumno alumno, String ruta){
         Gson json = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
         expedientes.put("EA11", alumno);
         try (FileWriter fw = new FileWriter(ruta)){
@@ -59,7 +59,7 @@ public class GestorExpedienteTreeMap {
      * Metodo para imprimir en terminal los expedientes
      * @param expedientesnuevos expedientes a imprimir
      */
-    void imprimirMap(TreeMap<String, Alumno> expedientesnuevos){
+    public void imprimirMap(TreeMap<String, Alumno> expedientesnuevos){
         Set<String> set = expedientesnuevos.keySet();
         Object[] keys = set.toArray();
         for (Object key : keys){
@@ -71,10 +71,14 @@ public class GestorExpedienteTreeMap {
     /**
      * Metodo para generar datos iniciales en el fichero
      */
-    void generarDatosIniciales(){
+    public void generarDatosIniciales(){
         expedientes.put("EA12", new Alumno("Hitler", new ArrayList<>(List.of(new Asignatura("Artes", 0.0)))));
         expedientes.put("EA13", new Alumno("Jeanne D"+'\''+"Arc", new ArrayList<>(List.of(new Asignatura("Historia de Francia", 10)))));
         expedientes.put("EA14", new Alumno("Yutirannus", new ArrayList<>(List.of(new Asignatura("Historia del Cretacico", 10.0)))));
+    }
+
+    public TreeMap<String , Alumno> getExpedientes(){
+        return expedientes;
     }
 
     public static void main(String[] args) {

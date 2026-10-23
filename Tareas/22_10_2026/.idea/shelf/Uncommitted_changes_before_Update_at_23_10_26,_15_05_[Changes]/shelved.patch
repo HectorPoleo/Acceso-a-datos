@@ -1,0 +1,59 @@
+Index: ../22_10_2026ç/src/main/java/org/example/repository/GestorExpedienteTreeMap.java
+===================================================================
+diff --git a/../22_10_2026ç/src/main/java/org/example/repository/GestorExpedienteTreeMap.java b/../22_10_2026ç/src/main/java/org/example/repository/GestorExpedienteTreeMap.java
+deleted file mode 100644
+--- a/../22_10_2026ç/src/main/java/org/example/repository/GestorExpedienteTreeMap.java	(revision 503dfed258c06ce65f2cd5914a20e21288e6f61a)
++++ /dev/null	(revision 503dfed258c06ce65f2cd5914a20e21288e6f61a)
+@@ -1,19 +0,0 @@
+-package org.example.repository;
+-
+-import  com.google.gson.GsonBuilder;
+-import  com.google.gson.reflect.TypeToken;
+-import org.example.model.Alumno;
+-
+-import java.util.Map;
+-import java.util.TreeMap;
+-
+-public class GestorExpedienteTreeMap {
+-    static TreeMap<String, Alumno> expedientes = new TreeMap<>();
+-
+-    void cargarExpediente(String ruta){
+-    Gson json = new Gson();
+-    try (FileReader fr = new FileReader(ruta)){
+-        Type tipoArrayList = new TypeToken<TreeMap<String, Alumno>>(){}.getType();
+-    }
+-    }
+-}
+Index: ../22_10_2026ç/src/main/java/org/example/model/Alumno.java
+===================================================================
+diff --git a/../22_10_2026ç/src/main/java/org/example/model/Alumno.java b/../22_10_2026ç/src/main/java/org/example/model/Alumno.java
+deleted file mode 100644
+--- a/../22_10_2026ç/src/main/java/org/example/model/Alumno.java	(revision 503dfed258c06ce65f2cd5914a20e21288e6f61a)
++++ /dev/null	(revision 503dfed258c06ce65f2cd5914a20e21288e6f61a)
+@@ -1,4 +0,0 @@
+-package org.example.model;
+-
+-public class Alumno {
+-}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"fa215908-7636-49da-b911-30e03b78e1f8\" name=\"Changes\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;HectorPoleo&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/HectorPoleo/Acceso-a-datos&quot;,\n    &quot;accountId&quot;: &quot;b8f5d3e2-56ca-45a4-b60f-ccd919003236&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 7,\n  &quot;fromUser&quot;: false\n}</component>\n  <component name=\"ProjectId\" id=\"3L3rnsQSC92Ia7G4Fm9r91ZQWbs\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"Application.GestorExpedienteTreeMap.executor\": \"Run\",\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.git.unshallow\": \"true\",\n    \"RunOnceActivity.typescript.service.memoryLimit.init\": \"true\",\n    \"codeWithMe.voiceChat.enabledByDefault\": \"false\",\n    \"git-widget-placeholder\": \"main\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"last_opened_file_path\": \"/home/tarde/Descargas/Acceso-a-datos/Tareas/22_10_2026ç/src/main/resources\",\n    \"node.js.detected.package.jshint\": \"true\",\n    \"node.js.selected.package.jshint\": \"\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"onboarding.tips.debug.path\": \"/home/tarde/Descargas/Acceso-a-datos/Tareas/22_10_2026ç/src/main/java/org/example/Main.java\",\n    \"project.structure.last.edited\": \"Project\",\n    \"project.structure.proportion\": \"0.0\",\n    \"project.structure.side.proportion\": \"0.2\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/../22_10_2026ç/src/main/resources\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\n      <module name=\"22_10_2026\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\n      <module name=\"22_10_2026\" />\n      <option name=\"filePath\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"fa215908-7636-49da-b911-30e03b78e1f8\" name=\"Changes\" comment=\"\" />\n      <created>1792693764860</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1792693764860</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/../22_10_2026ç/src/main/java/org/example/Main.java</url>\n          <line>13</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 503dfed258c06ce65f2cd5914a20e21288e6f61a)
++++ b/.idea/workspace.xml	(date 1792699289483)
+@@ -4,7 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="fa215908-7636-49da-b911-30e03b78e1f8" name="Changes" comment="" />
++    <list default="true" id="fa215908-7636-49da-b911-30e03b78e1f8" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/../22_10_2026ç/src/main/java/org/example/model/Alumno.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../22_10_2026ç/src/main/java/org/example/repository/GestorExpedienteTreeMap.java" beforeDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
