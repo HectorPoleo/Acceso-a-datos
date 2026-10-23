@@ -55,7 +55,6 @@ public class Alumno {
         for(Asignatura asignatura : asignaturas){
            sumaDeNotas += asignatura.getCalificacion();
         }
-        System.out.println(sumaDeNotas/asignaturas.size());
         return sumaDeNotas/asignaturas.size();
     }
 

@@ -20,6 +20,8 @@ public class Main {
         System.out.println("Ultima: "+ ge.getExpedientes().lastEntry());
 
         ge.getExpedientes().get("EA13").getAsignaturas().add(new Asignatura("Religion", 10.0));
+        System.out.println(ge.getExpedientes().get("EA13").calcularNotaMedia());
+
         ge.guardarExpediente(ge.getExpedientes(), ruta);
         ge.cargarExpediente(ruta);
         ge.imprimirMap(ge.getExpedientes());
