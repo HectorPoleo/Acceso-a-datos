@@ -50,11 +50,12 @@ public class Alumno {
      * Metodo para calcular la nota media de un alumno
      * @return
      */
-    double calcularNotaMedia(){
+    public double calcularNotaMedia(){
         double sumaDeNotas= 0.0;
         for(Asignatura asignatura : asignaturas){
            sumaDeNotas += asignatura.getCalificacion();
         }
+        System.out.println(sumaDeNotas/asignaturas.size());
         return sumaDeNotas/asignaturas.size();
     }
 

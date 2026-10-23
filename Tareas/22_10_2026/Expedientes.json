@@ -3,6 +3,10 @@
     "nombre": "Franco",
     "asignaturas": [
       {
+        "nombre": "Aspectos de la guerra",
+        "calificacion": 9.0
+      },
+      {
         "nombre": "Historia de espanya",
         "calificacion": 10.0
       }
