@@ -1,0 +1,32 @@
+<biblioteca>
+  <libro>
+    <isbn>AAAA2222</isbn>
+    <titulo>Piter y la isla perdida</titulo>
+    <autor>Febles</autor>
+    <precio>20.0</precio>
+  </libro>
+  <libro>
+    <isbn>AAAA2223</isbn>
+    <titulo>Piter y la isla no perdida</titulo>
+    <autor>Febles</autor>
+    <precio>20.0</precio>
+  </libro>
+  <libro>
+    <isbn>AAAA2224</isbn>
+    <titulo>Piter y la isla explorada</titulo>
+    <autor>Febles</autor>
+    <precio>20.0</precio>
+  </libro>
+  <libro>
+    <isbn>AAAA2225</isbn>
+    <titulo>Piter y la isla ya explorada</titulo>
+    <autor>Febles</autor>
+    <precio>20.0</precio>
+  </libro>
+  <libro>
+    <isbn>22dd22</isbn>
+    <titulo>Paco Juan y el fenix perdido</titulo>
+    <autor>Manolito</autor>
+    <precio>80.0</precio>
+  </libro>
+</biblioteca>
