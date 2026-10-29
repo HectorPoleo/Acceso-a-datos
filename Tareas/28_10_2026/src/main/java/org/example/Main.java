@@ -7,10 +7,9 @@ import org.example.repository.GestorAlmacenMultiformato;
 public class Main {
     public static void main(String[] args) {
         GestorAlmacenMultiformato.preparaEntorno();
-        GestorAlmacenMultiformato.leerCSV("./datos_almacen/importacion_producto.csv");
-        GestorAlmacenMultiformato.escribirRandomAccess("./datos.dat", GestorAlmacenMultiformato.getProductos());
-        GestorAlmacenMultiformato.actualizarStockRandomAccess("./datos.dat", 3, 23);
-        GestorAlmacenMultiformato.exportarJSON("./datos.json", GestorAlmacenMultiformato.getProductos());
+        GestorAlmacenMultiformato.escribirRandomAccess("./datos.dat", GestorAlmacenMultiformato.leerCSV("./datos_almacen/importacion_producto.csv"));
+        GestorAlmacenMultiformato.actualizarStockRandomAccess("./datos.dat", 0, 23);
+        GestorAlmacenMultiformato.exportarJSON("./datos.json", GestorAlmacenMultiformato.leerRandomAccess("./datos.dat"));
 
     }
 }

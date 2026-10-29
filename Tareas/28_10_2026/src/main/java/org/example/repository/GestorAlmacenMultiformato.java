@@ -11,7 +11,8 @@ import java.util.List;
 public class GestorAlmacenMultiformato {
     static String pathDirectorio = "./datos_almacen";
     static  String pathCSV = pathDirectorio+"/importacion_producto.csv";
-    static List<Producto> productos = new ArrayList<>();
+    static List<Producto> productosLeer = new ArrayList<>();
+    static List<Producto> productosRandom = new ArrayList<>();
 
     private static final int TAMANO_ID= 4;
     private static final int LONG_NOMBRE = 30;
@@ -30,7 +31,18 @@ public class GestorAlmacenMultiformato {
             if(!ficheroCsv.exists() || !ficheroCsv.isFile()){
                 ficheroCsv.createNewFile();
                 System.out.println("Se crea el fichero");
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter(pathCSV))){
+                    bw.write("1;Teclado;20.0;2");
+                    bw.newLine();
+                    bw.write("2;Raton;20.0;2");
+                    bw.newLine();
+                    bw.write("3;Alfombrilla;20.0;2");
+                    bw.newLine();
+                    bw.write("4;Pantalla;20.0;2");
+                }
             }
+
+
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
@@ -50,9 +62,9 @@ public class GestorAlmacenMultiformato {
                 }
                 Producto producto = new Producto(Integer.parseInt(datos[0]),
                         datos[1],Double.parseDouble(datos[2]), Integer.parseInt(datos[3]));
-                productos.add(producto);
+                productosLeer.add(producto);
             }
-            return productos;
+            return productosLeer;
         }catch (IOException e){
             System.out.println("ERROR: " + e.getMessage());
             return new ArrayList<>();
@@ -64,7 +76,7 @@ public class GestorAlmacenMultiformato {
                 raf.setLength(0);
                 for (Producto producto : productos){
                     raf.writeInt(producto.getId());
-                    raf.writeChars(producto.getNombre());
+                    raf.writeChars(AjustarNombre(producto.getNombre()));
                     raf.writeDouble(producto.getPrecio());
                     raf.writeInt(producto.getStock());
                 }
@@ -80,8 +92,7 @@ public class GestorAlmacenMultiformato {
                 System.out.println("Posicion fuera de rango "+posicion);
                 return;
             }
-
-            raf.seek(posicionRegistro+TAMANO_ID+TAMANO_NOMBRE* 2 + TAMANO_PRECIO);
+            raf.seek(posicionRegistro+TAMANO_ID+TAMANO_NOMBRE+TAMANO_PRECIO);
             raf.writeInt(nuevoStock);
         }catch (IOException e){
             System.out.println("ERROR: "+ e.getMessage());
@@ -97,7 +108,32 @@ public class GestorAlmacenMultiformato {
         }
     }
 
-    public static List<Producto> getProductos(){
-        return productos;
+    public static List<Producto> leerRandomAccess(String rutaDat){
+        try (RandomAccessFile raf = new RandomAccessFile(rutaDat, "r")){
+            long numRegistro = raf.length()/TAMANO_TOTAL;
+            for (int i= 0; i < numRegistro; i++){
+                raf.seek((long) i * TAMANO_TOTAL);
+                int id = raf.readInt();
+
+                StringBuilder sb = new StringBuilder();
+                for(int c = 0; c < LONG_NOMBRE; c++){
+                    sb.append(raf.readChar());
+                }
+                String nombre = sb.toString().trim();
+                double precio = raf.readDouble();
+                int stock = raf.readInt();
+                productosRandom.add(new Producto(id,nombre,precio,stock));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return productosRandom;
+    }
+
+
+    public static String AjustarNombre(String nombre){
+        StringBuffer sb = new StringBuffer(nombre);
+        sb.setLength(LONG_NOMBRE);
+        return sb.toString().replace('\0', ' ');
     }
 }
