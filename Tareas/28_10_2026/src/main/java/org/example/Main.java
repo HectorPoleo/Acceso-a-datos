@@ -6,7 +6,11 @@ import org.example.repository.GestorAlmacenMultiformato;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        GestorAlmacenMultiformato gestor = new GestorAlmacenMultiformato();
-        gestor
+        GestorAlmacenMultiformato.preparaEntorno();
+        GestorAlmacenMultiformato.leerCSV("./datos_almacen/importacion_producto.csv");
+        GestorAlmacenMultiformato.escribirRandomAccess("./datos.dat", GestorAlmacenMultiformato.getProductos());
+        GestorAlmacenMultiformato.actualizarStockRandomAccess("./datos.dat", 3, 23);
+        GestorAlmacenMultiformato.exportarJSON("./datos.json", GestorAlmacenMultiformato.getProductos());
+
     }
 }
