@@ -1,0 +1,5 @@
+[
+  {"id":1,"marca":"Ford","precio":10000.0,"stock":30},
+  {"id":2,"marca":"Honda","precio":15000.0,"stock":30},
+  {"id":3,"marca":"Tesla","precio":100000.0,"stock":30}
+]
