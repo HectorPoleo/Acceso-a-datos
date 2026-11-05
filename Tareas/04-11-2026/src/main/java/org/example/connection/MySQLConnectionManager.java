@@ -15,6 +15,7 @@ public class MySQLConnectionManager {
         try (Connection cn = getConnection()){
             System.out.println("Coneccion Iniciada "+ cn.getMetaData().getUserName());
             inicializacionTablas(cn);
+            insertarDatos(cn);
             consultarDatos(cn);
         } catch (SQLException e){
             System.out.println(e.getMessage());
@@ -35,9 +36,9 @@ public class MySQLConnectionManager {
 
     private static void insertarDatos(Connection cn){
         try (Statement st = cn.createStatement()){
-            st.executeUpdate("INSERT INTO facciones(faccion, ubicacion) VALUES ('Ursus', 'Rusia');");
-            st.executeUpdate("INSERT INTO facciones(faccion, ubicacion) VALUES('Iberia', 'España');");
-            st.executeUpdate("INSERT INTO facciones(faccion, ubicacion) VALUES ('Siracussa', 'Italia');");
+            //st.executeUpdate("INSERT INTO facciones(faccion, ubicacion) VALUES ('Ursus', 'Rusia');");
+            //st.executeUpdate("INSERT INTO facciones(faccion, ubicacion) VALUES('Iberia', 'España');");
+            //st.executeUpdate("INSERT INTO facciones(faccion, ubicacion) VALUES ('Siracussa', 'Italia');");
             st.executeUpdate("INSERT INTO operadores(id, codeName,clase,fechaLanzamiento,nombreFaccion) VALUES (1,'Lappland', 'Guard', 2020, 'Siracussa');");
         }catch (SQLException e){
             System.out.println(e.getMessage());
