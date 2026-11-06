@@ -23,7 +23,7 @@ public class ConnectionMYSQL {
 
     private static void leerDatos(Connection cn) {
         try (Statement st = cn.createStatement()){
-            ResultSet rs = st.executeQuery("SELECT * FROM empleados;");
+            ResultSet rs = st.executeQuery("SELECT em.* ,dep.* FROM empleados as em INNER JOIN departamentos as dep WHERE em.id_departamento = dep.id;");
             while (rs.next()){
                 String id = rs.getString("id");
                 String nombre = rs.getString("nombre");

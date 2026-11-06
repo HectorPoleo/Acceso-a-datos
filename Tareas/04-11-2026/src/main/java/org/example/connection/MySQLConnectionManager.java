@@ -47,7 +47,7 @@ public class MySQLConnectionManager {
 
     private static void consultarDatos(Connection cn){
         try (Statement st = cn.createStatement()){
-            ResultSet rs = st.executeQuery("SELECT * FROM operadores");
+            ResultSet rs = st.executeQuery("SELECT op.*, fac.* FROM operadores as op INNER JOIN facciones as fac WHERE op.nombreFaccion = fac.faccion");
             while (rs.next()){
                 int id = rs.getInt("id");
                 String codeName = rs.getString("codeName");
