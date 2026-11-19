@@ -79,7 +79,7 @@ public class Videojuego {
     public static boolean deleteId(Connection cn, Integer id){
         try (PreparedStatement pt = cn.prepareStatement(" DELETE FROM videojuegos WHERE id = ?;")){
             pt.setInt(1, id);
-            return pt.executeUpdate() >= 0;
+            return pt.executeUpdate() > 0;
         }catch (SQLException e){
             System.out.println(e.getMessage());
             return false;
@@ -96,6 +96,7 @@ public class Videojuego {
                 Double precio = rs.getDouble("precio");
                 videojuegos.add(new Videojuego(id, titulo, genero, precio));
             }
+            rs.close();
             System.out.println(videojuegos);
         } catch (SQLException e){
             System.out.println(e.getMessage());
@@ -117,6 +118,7 @@ public class Videojuego {
                 System.out.println(new Videojuego(id, titulo, genero, precio));
                 return new Videojuego(id, titulo, genero, precio);
             }
+            rs.close();
         }catch (SQLException e){
             System.out.println(e.getMessage());
 
