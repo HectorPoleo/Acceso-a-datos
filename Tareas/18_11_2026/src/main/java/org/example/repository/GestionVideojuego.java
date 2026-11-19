@@ -13,14 +13,14 @@ public class GestionVideojuego {
 
 
     public static void main(String[] args) {
-        Videojuego videojuego = new Videojuego("Marvel Spiderman 2", "Action", 60.0);
+        Videojuego videojuego = new Videojuego(2,"Marvel Spiderman 2", "Action", 60.0);
         try (Connection cn = getConnection()){
             inicializarTabla(cn);
             //Videojuego.insertarDatos(cn, videojuego);
             Videojuego.findById(cn, 2);
             Videojuego.update(cn, videojuego);
             Videojuego.findById(cn, 2);
-            //Videojuego.findAll(cn);
+            Videojuego.findAll(cn);
             //Videojuego.deleteId(cn,1);
         } catch (SQLException e){
             System.out.println(e.getMessage());

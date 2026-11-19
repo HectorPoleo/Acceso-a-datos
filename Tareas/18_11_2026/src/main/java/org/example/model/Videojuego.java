@@ -125,10 +125,8 @@ public class Videojuego {
     }
 
     public static boolean update (Connection cn, Videojuego videojuego){
-        try (PreparedStatement ps = cn.prepareStatement("UPDATE  videojuego SET titulo = ?, genero = ?, precio = ? WHERE id = ?")){
-            ps.setString(1, videojuego.getTitulo());
-            ps.setString(2, videojuego.getGenero());
-            ps.setDouble(3, videojuego.getPrecio());
+        try (PreparedStatement ps = cn.prepareStatement("UPDATE videojuegos SET precio = 90 WHERE id = ?")){
+            ps.setInt(1, videojuego.getId());
 
             return ps.executeUpdate() > 0;
         }catch (SQLException e){
