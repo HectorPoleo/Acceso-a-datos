@@ -11,18 +11,20 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        Propietario propietario = new Propietario("44005400c","Enrique","900 000 000");
-        Mascota mascota = new Mascota("Asteroid Destroyer 2", "perro", 20.0, 1);
+        Propietario propietario = new Propietario("44015400c","Enrique",null);
+        Mascota mascota = new Mascota(10,"Asteroid Destroyer 2", "perro", 20.0, 2);
         PropietarioRepository pr = new PropietarioRepository();
         MascotaRepository mr = new MascotaRepository();
         pr.insertarPropietario(propietario);
         pr.findById(2);
-        pr.deleteById(1);
+        //pr.deleteById(1);
+        pr.findAll();
 
         mr.insertarMascota(mascota);
-        mr.findById(1);
+        mr.findById(9);
         //mr.update(mascota, "gato");
-        mr.findById(2);
-        mr.deleteById(2);
+        //mr.findById(9);
+        //mr.deleteById(2);
+        mr.findAll();
     }
 }

@@ -11,11 +11,11 @@ public class Propietario {
     public Propietario() {
     }
 
-    public Propietario(int id) {
+    public Propietario(Integer id) {
         this.id = id;
     }
 
-    public Propietario(int id, String dni, String nombre, String telefono) {
+    public Propietario(Integer id, String dni, String nombre, String telefono) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
@@ -29,11 +29,11 @@ public class Propietario {
         this.telefono = telefono;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

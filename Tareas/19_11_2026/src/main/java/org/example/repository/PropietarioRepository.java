@@ -4,6 +4,8 @@ import org.example.connection.DataBaseConnection;
 import org.example.model.Propietario;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PropietarioRepository {
     private final Connection cn;
@@ -14,6 +16,12 @@ public class PropietarioRepository {
     }
 
     public boolean insertarPropietario(Propietario propietario){
+        if(propietario == null || propietario.getId() == null || propietario.getDni() == null|| propietario.getNombre() == null){
+            return false;
+        }
+        if(findById(propietario.getId()) == null){
+            return false;
+        }
         try (PreparedStatement pt = cn.prepareStatement("INSERT INTO propietarios(dni, nombre, telefono) VALUES (?,?,?);", Statement.RETURN_GENERATED_KEYS)){
             pt.setString(1,propietario.getDni());
             pt.setString(2, propietario.getNombre());
@@ -54,5 +62,23 @@ public class PropietarioRepository {
             System.out.println(e.getMessage());
             return false;
         }
+    }
+
+    public void findAll(){
+        List<Propietario> propietarios = new ArrayList<>();
+        try(PreparedStatement pt = cn.prepareStatement("SELECT * FROM propietarios")){
+            ResultSet rs = pt.executeQuery();
+            while (rs.next()){
+                Integer id = rs.getInt("id");
+                String dni = rs.getString("dni");
+                String nombre = rs.getString("nombre");
+                String telefono = rs.getString("telefono");
+                propietarios.add(new Propietario(id, dni, nombre, telefono));
+            }
+            System.out.println(propietarios);
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+
     }
 }
