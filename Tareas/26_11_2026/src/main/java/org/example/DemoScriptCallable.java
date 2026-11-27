@@ -40,6 +40,5 @@ public class DemoScriptCallable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
